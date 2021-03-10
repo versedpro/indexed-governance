@@ -76,7 +76,9 @@ module.exports = {
     rinkeby: {
       url: new InfuraProvider('rinkeby', process.env.INFURA_PROJECT_ID).connection.url,
       accounts: [keys.rinkeby],
-      chainId: 4
+      chainId: 4,
+      networkCheckTimeout:100000,
+      timeoutBlocks: 50000
     },
     coverage: {
       url: url.format({
