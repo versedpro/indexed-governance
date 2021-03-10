@@ -76,7 +76,9 @@ module.exports = {
     rinkeby: {
       url: new InfuraProvider('rinkeby', process.env.INFURA_PROJECT_ID).connection.url,
       accounts: [keys.rinkeby],
-      chainId: 4
+      chainId: 4,
+      networkCheckTimeout:100000,
+      timeoutBlocks: 50000
     },
     coverage: {
       url: url.format({
@@ -87,7 +89,7 @@ module.exports = {
     }
   },
   paths: {
-    sources: path.join(__dirname, 'temp-contracts'),
+    sources: path.join(__dirname, 'contracts'),
     tests: path.join(__dirname, 'test'),
     cache: path.join(__dirname, 'cache'),
     artifacts: path.join(__dirname, 'artifacts'),
