@@ -12,7 +12,7 @@ module.exports = async (bre) => {
   const deploy = await Deployer(bre, logger);
   const gasPrice = 60000000000;
 
-  const timelock = await ethers.getContract('timelock');
+  const timelock = await ethers.getContract('Timelock');
   const ndx = await ethers.getContract('Ndx');
   await deploy('GovernorAlpha', 'GovernorAlpha', {
     from: deployer,
